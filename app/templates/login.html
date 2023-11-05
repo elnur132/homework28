@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <form method="post" style="display: flex; justify-content: center; align-items: center; height: 80vh; flex-direction: column; gap: 20px;">
+        {% csrf_token %}
+        <table>
+            {{ form.username.label }}
+            {{ form.username }}
+            {{ form.password.label }}
+            {{ form.password }}
+        </table>
+        <button type="submit">Login</button>
+    </form>
+
+{% endblock %}

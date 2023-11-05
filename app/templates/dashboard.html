@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    {% if request.user.is_authenticated %}
+
+
+        <h1>Hello {{ request.user }}</h1>
+        Here is the list of registered persons
+        <ul>
+            {% for user in users %}
+                <li>{{ user }} </li>
+            {% endfor %}
+        </ul>
+
+
+
+
+    {% else %}
+
+
+
+        <a href="{% url 'login' %}" style="display: flex; justify-content: center; align-items: center; height: 80vh;">
+            <h1>Please Log in to get content</h1>
+        </a>
+
+
+
+    {% endif %}
+
+{% endblock %}
